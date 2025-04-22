@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Fundamento MVC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Fundamento do Padrão MVC</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="mvc.html">MVC</a>
+    <a href="crud.html">CRUD</a>
+  </nav>
+
+  <main>
+    <section>
+      <h2>O que é MVC?</h2>
+      <p>
+        O padrão MVC (Model-View-Controller) é uma arquitetura de software que separa a aplicação em três componentes principais:
+      </p>
+      <ul>
+        <li><strong>Model:</strong> A camada que gerencia os dados e a lógica de negócio, além de ser responsável por interagir com o banco de dados.</li>
+        <li><strong>View:</strong> A camada responsável pela interface com o usuário (UI). Ela apresenta os dados ao usuário, mas não contém lógica de negócios.</li>
+        <li><strong>Controller:</strong> Atua como intermediário entre o Model e a View, manipulando os dados do Model com base nas entradas do usuário, e atualizando a View conforme necessário.</li>
+      </ul>
+      <p>
+        Essa separação permite um código mais organizado, fácil de testar, manter e escalar. Cada camada tem responsabilidades distintas, tornando o sistema mais modular.
+      </p>
+    </section>
+
+    <section>
+      <h3>Por que usar MVC?</h3>
+      <p>
+        Utilizar o padrão MVC traz várias vantagens para o desenvolvimento de aplicações, tais como:
+      </p>
+      <ul>
+        <li> <strong>Reutilização de código:</strong> Com a separação de responsabilidades, o código fica mais organizado e reutilizável.</li>
+        <li> <strong>Facilidade de manutenção:</strong> Como as partes do sistema são desacopladas, a manutenção se torna mais simples e ágil.</li>
+        <li> <strong>Escalabilidade:</strong> MVC facilita a adição de novas funcionalidades sem impactar diretamente outras partes do sistema.</li>
+        <li> <strong>Facilidade de teste:</strong> Testes de unidade e integração são mais fáceis de realizar, 
+          pois o Model e o Controller podem ser testados independentemente.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Representação Gráfica</h3>
+      <p>Veja abaixo um diagrama ilustrativo do padrão MVC:</p>
+      <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/0*ZqwogJDz1cA1sr-B.png" alt="Diagrama MVC" 
+      style="width: 100%; border-radius: 10px; margin-bottom: 1rem;">
+    </section>
+
+    <section>
+      <h3>Exemplo em Python (Flask)</h3>
+      <p>O exemplo abaixo mostra como implementar o padrão MVC usando o framework Flask em Python:</p>
+      <pre><code>
+# Model: Definição da classe Produto
+class Produto:
+    def __init__(self, nome, preco):
+        self.nome = nome
+        self.preco = preco
+
+# Controller: Rota que manipula a lógica do produto
+@app.route("/produto")
+def exibir_produto():
+    produto = Produto("Notebook", 2500)  # Instanciação do modelo
+    return render_template("produto.html", produto=produto)  # Passando o modelo para a view
+
+# View (produto.html): Exibindo os dados do produto
+&lt;h1&gt;{{ produto.nome }}&lt;/h1&gt;
+&lt;p&gt;Preço: R$ {{ produto.preco }}&lt;/p&gt;
+      </code></pre>
+      <p>
+        No exemplo acima, temos três componentes principais:
+        <ul>
+          <li><strong>Model:</strong> A classe `Produto` que armazena as informações do produto.</li>
+          <li><strong>Controller:</strong> A rota que captura as informações e as envia para a View.</li>
+          <li><strong>View:</strong> A página HTML que exibe as informações para o usuário.</li>
+        </ul>
+      </p>
+    </section>
+
+    <section>
+      <h3>Como o MVC Facilita o Desenvolvimento</h3>
+      <p>
+        A principal vantagem do MVC é que ele organiza a estrutura da aplicação de forma clara e modular. 
+        Isso não só facilita a manutenção e o desenvolvimento de novas funcionalidades, mas também torna 
+        mais fácil para equipes diferentes trabalharem simultaneamente nas camadas separadas. Por exemplo:
+      </p>
+      <ul>
+        <li> Desenvolvedores de back-end podem trabalhar apenas no Model e Controller, enquanto os desenvolvedores front-end focam na View.</li>
+        <li> A separação de responsabilidades facilita a implementação de testes unitários, 
+          garantindo que cada componente da aplicação funcione de forma independente.</li>
+        <li> A escalabilidade do sistema é otimizada, pois é fácil adicionar novas funcionalidades 
+          ou alterar partes específicas da aplicação sem afetar o restante do sistema.</li>
+      </ul>
+    </section>
+
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="crud.html" class="btn">Ir para CRUD →</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Site Educativo MVC e CRUD</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Fundamento CRUD</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Fundamento do CRUD</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="mvc.html">MVC</a>
+    <a href="crud.html">CRUD</a>
+  </nav>
+
+  <main>
+    <section>
+      <h2>O que é CRUD?</h2>
+      <p>
+        O termo CRUD refere-se a um conjunto de operações básicas em sistemas de banco de dados. Estas operações formam a espinha dorsal da maioria dos aplicativos que interagem com dados, seja em um banco de dados relacional (SQL) ou não-relacional (NoSQL). As quatro ações principais do CRUD são:
+      </p>
+      <ul>
+        <li><strong>Create</strong> – Criar um novo registro.</li>
+        <li><strong>Read</strong> – Ler ou recuperar dados existentes.</li>
+        <li><strong>Update</strong> – Atualizar dados existentes.</li>
+        <li><strong>Delete</strong> – Remover dados do sistema.</li>
+      </ul>
+      <p>
+        No mundo real, imagine um sistema de gerenciamento de biblioteca. O CRUD seria utilizado para:
+      </p>
+      <ul>
+        <li>Adicionar novos livros ao sistema (Create)</li>
+        <li>Exibir os livros existentes (Read)</li>
+        <li>Atualizar informações sobre um livro (Update)</li>
+        <li>Excluir um livro que foi retirado do catálogo (Delete)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Por que CRUD é importante?</h3>
+      <p>
+        As operações CRUD são a base de qualquer sistema com banco de dados. Elas garantem que você possa:
+      </p>
+      <ul>
+        <li> Manipular dados de maneira eficiente e organizada.</li>
+        <li> Estruturar as operações de dados de forma simples e intuitiva.</li>
+        <li> Garantir a segurança e a integridade das informações, com controles sobre as operações realizadas.</li>
+        <li> Integrar facilmente seu sistema a APIs e frameworks modernos (como Django, Laravel, etc.).</li>
+        <li> Permitir uma boa escalabilidade e manutenção do sistema.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Representação Visual</h3>
+      <p>O diagrama abaixo ilustra como o CRUD interage com o banco de dados:</p>
+      <img src="https://escoladaprogramacao.com.br/wp-content/uploads/2023/02/1_2eBdh0vLZjUyCDF6x1EqvQ.png" alt="Diagrama de operações CRUD" style="width: 100%; border-radius: 10px; margin-bottom: 1rem;">
+    </section>
+
+    <section>
+      <h3>Exemplo Prático em SQL</h3>
+      <p>Veja um exemplo de como realizar as operações CRUD em SQL:</p>
+      <pre><code>
+-- CREATE: Adicionando um novo produto
+INSERT INTO produtos (nome, preco) VALUES ('Notebook', 2500);
+
+-- READ: Listando todos os produtos
+SELECT * FROM produtos;
+
+-- UPDATE: Atualizando o preço de um produto
+UPDATE produtos SET preco = 2600 WHERE nome = 'Notebook';
+
+-- DELETE: Removendo um produto
+DELETE FROM produtos WHERE nome = 'Notebook';
+      </code></pre>
+      <p>
+        Esse código é um exemplo simples de como as operações CRUD são feitas em um banco de dados. Em sistemas reais, você também pode usar esses comandos em conjunto com interfaces gráficas ou APIs RESTful para facilitar a interação com o usuário final.
+      </p>
+    </section>
+
+    <section>
+      <h3>CRUD em Ação: Exemplo com API RESTful</h3>
+      <p>Em sistemas modernos, o CRUD é comumente implementado através de APIs RESTful, que utilizam os métodos HTTP:</p>
+      <ul>
+        <li><strong>POST</strong> – Corresponde ao Create (adicionar um novo recurso).</li>
+        <li><strong>GET</strong> – Corresponde ao Read (recuperar dados ou visualizar um recurso).</li>
+        <li><strong>PUT/PATCH</strong> – Corresponde ao Update (atualizar um recurso).</li>
+        <li><strong>DELETE</strong> – Corresponde ao Delete (remover um recurso).</li>
+      </ul>
+      <p>
+        Por exemplo, em uma API RESTful para gerenciamento de livros, você poderia realizar as operações CRUD usando os seguintes endpoints:
+      </p>
+      <ul>
+        <li><strong>POST /livros</strong> – Cria um novo livro.</li>
+        <li><strong>GET /livros</strong> – Lista todos os livros.</li>
+        <li><strong>GET /livros/{id}</strong> – Recupera um livro específico.</li>
+        <li><strong>PUT/PATCH /livros/{id}</strong> – Atualiza um livro específico.</li>
+        <li><strong>DELETE /livros/{id}</strong> – Deleta um livro específico.</li>
+      </ul>
+    </section>
+
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="mvc.html" class="btn">← Voltar para MVC</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Site Educativo MVC e CRUD</p>
+  </footer>
+</body>
+</html>
